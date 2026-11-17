@@ -19,3 +19,4 @@ bedrock/data/rock/*
 # private planning notes
 b.md
 Bedrock Briefing.pdf
+*.egg-info/

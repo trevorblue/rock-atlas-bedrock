@@ -1,9 +1,0 @@
-pyproject.toml
-src/bedrock/__init__.py
-src/bedrock/clean.py
-src/bedrock/config.py
-src/bedrock/download.py
-src/bedrock.egg-info/PKG-INFO
-src/bedrock.egg-info/SOURCES.txt
-src/bedrock.egg-info/dependency_links.txt
-src/bedrock.egg-info/top_level.txt
