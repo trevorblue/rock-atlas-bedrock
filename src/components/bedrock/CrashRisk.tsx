@@ -95,7 +95,7 @@ export const CrashRisk: React.FC<{ data: BedrockData }> = ({ data }) => {
       </div>
 
       {garch && garchRow && (
-        <Panel className="border-l-2 border-l-red-700 dark:border-l-red-500">
+        <Panel className="border-l-2 border-l-amber-500 dark:border-l-amber-400">
           <PanelTitle
             title="New stochastic model: GARCH volatility forecast"
             subtitle="Volatility is the strongest crash signal. GARCH, a standard financial time-series model, forecasts each stock's volatility for the next four weeks, knowing that calm and stormy spells come in runs. Refitted every year on earlier data only, and tested exactly like everything else."

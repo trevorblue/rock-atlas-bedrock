@@ -115,7 +115,7 @@ export const MarketDepth: React.FC<{ data: BedrockData }> = ({ data }) => {
               {
                 id: 'hard',
                 label: 'Hard to sell (> 20 days)',
-                color: '#1D4ED8',
+                color: '#CDB171',
                 values: history.map((h) => h.pct_over_20d * 100),
               },
             ]}

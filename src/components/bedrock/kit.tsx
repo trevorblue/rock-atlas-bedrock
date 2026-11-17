@@ -34,7 +34,7 @@ export const PageHead: React.FC<{
   badge?: { text: string; tone: 'alert' | 'quiet' };
 }> = ({ eyebrow, question, title, subtitle, badge }) => (
   <div className="space-y-3">
-    <div className="border-l-2 border-red-700 dark:border-red-500 pl-3 py-1">
+    <div className="border-l-2 border-amber-500 dark:border-amber-400 pl-3 py-1">
       <div className="text-[10px] font-mono font-semibold tracking-widest text-slate-500 dark:text-slate-400 uppercase">
         This page answers
       </div>
@@ -42,7 +42,7 @@ export const PageHead: React.FC<{
     </div>
     <div>
       <div className="flex flex-wrap items-center gap-3">
-        <span className="text-[10px] font-mono font-semibold tracking-widest text-red-700 dark:text-red-400 uppercase">
+        <span className="text-[10px] font-mono font-semibold tracking-widest text-amber-600 dark:text-amber-400 uppercase">
           {eyebrow}
         </span>
         {badge && (
@@ -106,7 +106,7 @@ export const KpiRow: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 /** Names the model behind a page, what it was fed and how it was tested. */
 export const ModelStrip: React.FC<{ name: string; facts: string[] }> = ({ name, facts }) => (
   <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 border-y border-slate-200 dark:border-slate-800 py-2.5 text-xs text-slate-500 dark:text-slate-400">
-    <span className="bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-2 py-0.5 text-[10px] font-mono font-bold tracking-wider">
+    <span className="bg-amber-400 text-slate-950 px-2 py-0.5 text-[10px] font-mono font-bold tracking-wider">
       MODEL
     </span>
     <span className="font-semibold text-slate-800 dark:text-slate-200">{name}</span>
@@ -215,11 +215,11 @@ export interface HBarDatum {
 }
 
 const TONE_FILL: Record<string, string> = {
-  accent: '#1D4ED8',
-  muted: '#94A3B8',
-  good: '#0F766E',
-  warn: '#D97706',
-  bad: '#DC2626',
+  accent: '#CDB171', // gold: the brand accent
+  muted: '#5C7266', // deep sage, for anything receding
+  good: '#76CA9F', // sage
+  warn: '#C9913F', // amber-orange, distinct from the gold accent
+  bad: '#D4654F', // clay red
 };
 
 /** Horizontal bars with the name on the left and the value at the end: rankings, impacts, scores. */
@@ -433,7 +433,7 @@ export const DotIntervalChart: React.FC<{
       </text>
       {data.map((d, i) => {
         const cy = 16 + i * rowH;
-        const colour = !d.certain ? '#94A3B8' : d.value >= 0 ? '#1D4ED8' : '#DC2626';
+        const colour = !d.certain ? '#5C7266' : d.value >= 0 ? '#CDB171' : '#D4654F';
         return (
           <g key={d.label}>
             <title>{`${d.label}: ${d.display ?? d.value.toFixed(3)} (95% range ${(d.low * 100).toFixed(1)}% to ${(d.high * 100).toFixed(1)}%)`}</title>
@@ -449,7 +449,7 @@ export const DotIntervalChart: React.FC<{
             <line x1={x(d.low)} x2={x(d.high)} y1={cy} y2={cy} stroke={colour} strokeWidth={2} opacity={0.5} />
             <line x1={x(d.low)} x2={x(d.low)} y1={cy - 5} y2={cy + 5} stroke={colour} strokeWidth={2} opacity={0.5} />
             <line x1={x(d.high)} x2={x(d.high)} y1={cy - 5} y2={cy + 5} stroke={colour} strokeWidth={2} opacity={0.5} />
-            <circle cx={x(d.value)} cy={cy} r={5} fill={colour} />
+            <circle cx={x(d.value)} cy={cy} r={5} fill={colour} stroke="#0F1F18" strokeWidth={1.5} />
             <text
               x={x(d.high) + 10}
               y={cy}

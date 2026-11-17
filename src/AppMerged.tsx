@@ -166,7 +166,7 @@ const NAV_GROUPS: NavGroup[] = [
 const ALL_PAGES: PageMeta[] = NAV_GROUPS.flatMap((g) => g.pages);
 
 export default function AppMerged() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [activePage, setActivePage] = useState<PageId>('command-centre');
 
@@ -470,7 +470,7 @@ export default function AppMerged() {
         onClick={onPick}
         className={`w-full flex items-center gap-2.5 px-3 py-2 text-left text-xs font-medium transition-colors whitespace-nowrap ${
           active
-            ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900'
+            ? 'bg-amber-400 text-slate-950'
             : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100'
         }`}
       >
@@ -585,7 +585,7 @@ export default function AppMerged() {
             </button>
             <button
               onClick={handleStartLiveDemo}
-              className="flex items-center gap-1.5 px-4 py-1.5 text-xs font-medium bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors whitespace-nowrap shrink-0"
+              className="flex items-center gap-1.5 px-4 py-1.5 text-xs font-medium bg-amber-400 text-slate-950 hover:bg-amber-300 transition-colors whitespace-nowrap shrink-0"
             >
               <Play className="h-3.5 w-3.5" />
               <span>Live Demo</span>

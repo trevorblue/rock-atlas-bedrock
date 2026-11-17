@@ -15,7 +15,7 @@ import { daysToExit, runScenario, summarize } from '../../bedrock/stressModel';
 import { DataTable, HBarChart, Kpi, ModelStrip, Note, Panel, PanelTitle, Pill } from './kit';
 
 const BEDROCK_TAG = (
-  <span className="bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-2 py-0.5 text-[10px] font-mono font-bold tracking-wider">
+  <span className="bg-amber-400 text-slate-950 px-2 py-0.5 text-[10px] font-mono font-bold tracking-wider">
     BEDROCK · REAL NSE DATA
   </span>
 );
@@ -38,7 +38,7 @@ export const HeadlinePanel: React.FC<{ data: BedrockData }> = ({ data }) => {
   ];
 
   return (
-    <Panel className="border-l-2 border-l-red-700 dark:border-l-red-500">
+    <Panel className="border-l-2 border-l-amber-500 dark:border-l-amber-400">
       <PanelTitle
         title="Bedrock fragility findings on real NSE data"
         subtitle={`Six tested models on prices from 2013 to ${niceDate(h.data_as_of.stocks)} and CMA foreign flows to ${
@@ -76,7 +76,7 @@ export const ExitCheckPanel: React.FC<{ data: BedrockData }> = ({ data }) => {
   const blocked = paperTop.filter((r) => !r.exit_ok_10m);
 
   return (
-    <Panel className="border-l-2 border-l-red-700 dark:border-l-red-500">
+    <Panel className="border-l-2 border-l-amber-500 dark:border-l-amber-400">
       <PanelTitle
         title="Can you actually get out? Bedrock's exit check on real NSE data"
         subtitle={`On the NSE a stock can look excellent on paper and still be impossible to sell. Bedrock tested this every month from ${summary.first.slice(
@@ -185,7 +185,7 @@ export const StockSignalsPanel: React.FC<{ data: BedrockData; ticker: string }> 
 
   if (!depth) {
     return (
-      <Panel className="border-l-2 border-l-red-700 dark:border-l-red-500">
+      <Panel className="border-l-2 border-l-amber-500 dark:border-l-amber-400">
         <PanelTitle
           title="Bedrock signals"
           subtitle={`${ticker} is not in Bedrock's real-data universe (ordinary shares on the NSE with a liquidity history).`}
@@ -286,7 +286,7 @@ export const StockSignalsPanel: React.FC<{ data: BedrockData; ticker: string }> 
   if (flags.length) changes.push('News that explains the recent jumps would turn a speculation lead into an explained move.');
 
   return (
-    <Panel className="border-l-2 border-l-red-700 dark:border-l-red-500">
+    <Panel className="border-l-2 border-l-amber-500 dark:border-l-amber-400">
       <PanelTitle
         title={`Bedrock stock report — ${shortName(depth.name)}`}
         subtitle="Every signal Bedrock holds on this stock, with the evidence behind it and how sure we are. Rules, not opinions; not investment advice."
@@ -332,7 +332,7 @@ export const DepthRiskPanel: React.FC<{ data: BedrockData }> = ({ data }) => {
   const worst = stress.rows.filter((r) => r.sellKes > 0 && r.priceImpact !== null).slice(0, 8);
 
   return (
-    <Panel className="border-l-2 border-l-red-700 dark:border-l-red-500">
+    <Panel className="border-l-2 border-l-amber-500 dark:border-l-amber-400">
       <PanelTitle
         title="Bedrock liquidity risk: days to exit, and a foreign-selling stress test"
         subtitle={`Risk here is not only volatility: it is whether a position can be sold at all. ${pct(
@@ -407,7 +407,7 @@ export const PredictivePanel: React.FC<{ data: BedrockData }> = ({ data }) => {
   ];
 
   return (
-    <Panel className="border-l-2 border-l-red-700 dark:border-l-red-500">
+    <Panel className="border-l-2 border-l-amber-500 dark:border-l-amber-400">
       <PanelTitle
         title="Bedrock's tested predictive models, on real NSE data"
         subtitle="Each one was trained only on data available at the time and scored on periods it had never seen. Every version tried is reported, not only the winner."
@@ -432,7 +432,7 @@ export const PredictivePanel: React.FC<{ data: BedrockData }> = ({ data }) => {
 export const ResilienceTestPanel: React.FC<{ data: BedrockData }> = ({ data }) => {
   const s = data.radar.summary;
   return (
-    <Panel className="border-l-2 border-l-red-700 dark:border-l-red-500">
+    <Panel className="border-l-2 border-l-amber-500 dark:border-l-amber-400">
       <PanelTitle
         title="Does resilience repeat? Bedrock's out-of-sample test on real NSE data"
         subtitle="The cohort test above is scored inside the same stress window it measures. Bedrock asks the harder question: do stocks that held up in past falls hold up in the NEXT one?"
@@ -457,7 +457,7 @@ export const ResilienceTestPanel: React.FC<{ data: BedrockData }> = ({ data }) =
 
 // ---------------------------------------------------------------- 08. Data Governance
 export const ProvenancePanel: React.FC<{ data: BedrockData }> = ({ data }) => (
-  <Panel className="border-l-2 border-l-red-700 dark:border-l-red-500">
+  <Panel className="border-l-2 border-l-amber-500 dark:border-l-amber-400">
     <PanelTitle
       title="Bedrock data provenance"
       subtitle={`Real market data behind every figure on the real-data pages. Prices to ${niceDate(

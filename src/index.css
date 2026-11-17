@@ -1,10 +1,86 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+/**
+ * ROCK ATLAS house theme.
+ *
+ * Palette and type taken from the Rock Atlas brand site: a near-black forest-green ground, warm gold for
+ * emphasis, sage for data labels, and a high-contrast serif for display type over a clean sans.
+ *
+ * Rather than restyle 27 pages by hand, the Tailwind scales every component already uses are remapped here, so
+ * the whole platform — the original workspaces and the Bedrock pages alike — takes on the brand at once:
+ *   slate           -> the forest-green ground and its text scale
+ *   teal / emerald  -> sage: "good", and the mono labels that sit under data
+ *   amber           -> gold: emphasis, the brand accent, every demo marker
+ *   red             -> a clay red that still reads on a dark green ground
+ */
 @theme {
-  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans: "Public Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", "Public Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* ground + text: dark at the 900s, light at the 100s, so dark mode reads correctly */
+  --color-slate-50:  #F2F5F1;
+  --color-slate-100: #E4EAE4;
+  --color-slate-200: #C8D3CB;
+  --color-slate-300: #AFBCB2;
+  --color-slate-400: #93A69A;
+  --color-slate-500: #7C8C82;
+  --color-slate-600: #5C7266;
+  --color-slate-700: #2B4537;
+  --color-slate-800: #1B3328;
+  --color-slate-900: #0F1F18;
+  --color-slate-950: #071310;
+
+  /* sage */
+  --color-teal-50:  #E6F4EC;
+  --color-teal-100: #CFEADB;
+  --color-teal-200: #A9DCC1;
+  --color-teal-300: #8FD3AE;
+  --color-teal-400: #76CA9F;
+  --color-teal-500: #5FB88B;
+  --color-teal-600: #4A9E74;
+  --color-teal-700: #3A8460;
+  --color-teal-800: #1E4634;
+  --color-teal-900: #143126;
+  --color-teal-950: #0C2219;
+  --color-emerald-50:  #E6F4EC;
+  --color-emerald-100: #CFEADB;
+  --color-emerald-200: #A9DCC1;
+  --color-emerald-300: #8FD3AE;
+  --color-emerald-400: #76CA9F;
+  --color-emerald-500: #5FB88B;
+  --color-emerald-600: #4A9E74;
+  --color-emerald-700: #3A8460;
+  --color-emerald-800: #1E4634;
+  --color-emerald-900: #143126;
+  --color-emerald-950: #0C2219;
+
+  /* gold */
+  --color-amber-50:  #F7EFDC;
+  --color-amber-100: #EFE2C2;
+  --color-amber-200: #E5D3A4;
+  --color-amber-300: #DCC68C;
+  --color-amber-400: #CDB171;
+  --color-amber-500: #BE9E59;
+  --color-amber-600: #A38543;
+  --color-amber-700: #8D7D50;
+  --color-amber-800: #4A3F21;
+  --color-amber-900: #2E2715;
+  --color-amber-950: #1C1810;
+
+  /* clay red */
+  --color-red-50:  #FAE9E4;
+  --color-red-100: #F5D5CC;
+  --color-red-200: #F0BCAE;
+  --color-red-300: #EFA595;
+  --color-red-400: #E58E7B;
+  --color-red-500: #D4654F;
+  --color-red-600: #C75541;
+  --color-red-700: #A8402F;
+  --color-red-800: #632A20;
+  --color-red-900: #3A1A14;
+  --color-red-950: #26110D;
 }
 
 @layer base {
@@ -14,13 +90,32 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* the ground carries a faint sage glow, as on the brand site */
+  body {
+    background-color: var(--color-slate-950);
+    background-image: radial-gradient(ellipse 70% 45% at 72% 0%, rgba(118, 202, 159, 0.05), transparent 62%);
+    background-attachment: fixed;
+  }
+
   h1, h2, h3, h4 {
     font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  /* mono is the brand's voice for anything machine-generated */
+  .font-mono {
+    letter-spacing: 0.04em;
   }
 
   .tabular-nums {
     font-variant-numeric: tabular-nums;
   }
+
+  /* controls and selection on a dark ground */
+  input[type="range"] { accent-color: var(--color-amber-400); }
+  select, input[type="text"], input[type="file"] { color-scheme: dark; }
+  ::selection { background: var(--color-amber-400); color: var(--color-slate-950); }
 }
 
 @media (prefers-reduced-motion: reduce) {

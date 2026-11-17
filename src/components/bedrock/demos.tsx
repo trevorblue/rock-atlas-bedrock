@@ -86,11 +86,11 @@ export const SelloffDemo: React.FC<{ data: BedrockData }> = ({ data }) => {
           <MultiLineChart
             dates={wf.map((w) => w.period)}
             series={[
-              { id: 'p', label: 'Predicted chance', color: '#1D4ED8', values: wf.map((w) => w.xgboost * 100) },
+              { id: 'p', label: 'Predicted chance', color: '#CDB171', values: wf.map((w) => w.xgboost * 100) },
               {
                 id: 'a',
                 label: 'Heavy selling followed',
-                color: '#DC2626',
+                color: '#D4654F',
                 dashed: true,
                 values: wf.map((w) => (w.actual === 1 ? 100 : 0)),
               },

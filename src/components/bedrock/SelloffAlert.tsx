@@ -111,13 +111,13 @@ export const SelloffAlert: React.FC<{ data: BedrockData }> = ({ data }) => {
               {
                 id: 'p',
                 label: 'Predicted chance of heavy selling',
-                color: '#1D4ED8',
+                color: '#CDB171',
                 values: walkForward.map((w) => w.xgboost * 100),
               },
               {
                 id: 'actual',
                 label: 'Heavy selling did follow (100 = yes)',
-                color: '#DC2626',
+                color: '#D4654F',
                 dashed: true,
                 values: walkForward.map((w) => (w.actual === 1 ? 100 : 0)),
               },
