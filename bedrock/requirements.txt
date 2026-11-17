@@ -1,0 +1,16 @@
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.5
+xgboost>=2.0
+scipy>=1.11
+arch>=6.0          # GARCH volatility model (crash-risk challenger)
+pyarrow>=15
+requests>=2.31
+pdfplumber>=0.11
+pytest>=8           # tests
+streamlit==1.56.0     # pinned: the dashboard's styling is tested on this version
+plotly>=5.20
+kaleido>=0.2        # optional: export charts as PNG for the note / slides
+nbformat>=5.9       # optional: notebook
+nbclient>=0.10      # optional: notebook
+ipykernel>=6.29     # optional: notebook

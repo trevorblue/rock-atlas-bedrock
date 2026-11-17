@@ -6,3 +6,16 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Python engine artefacts
+__pycache__/
+*.py[cod]
+.venv/
+bedrock/data/raw/
+bedrock/data/processed/
+bedrock/data/rock/*
+!bedrock/data/rock/README.md
+
+# private planning notes
+b.md
+Bedrock Briefing.pdf

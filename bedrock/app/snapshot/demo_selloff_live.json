@@ -1,0 +1,14 @@
+{
+ "period": "2026-11-13",
+ "probability": 0.17777468264102936,
+ "signal": "NO CALL",
+ "threshold_kes_m": -360.7,
+ "base_rate": 0.2514506769825919,
+ "model": "xgboost",
+ "features_used": [
+  "flow",
+  "flow_3"
+ ],
+ "features_dropped": [],
+ "n_train": 517
+}

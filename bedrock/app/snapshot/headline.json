@@ -1,0 +1,70 @@
+{
+  "depth": {
+    "n_stocks": 64,
+    "as_of": "2026-11-16",
+    "pct_over_5d": 0.796875,
+    "pct_over_20d": 0.671875,
+    "pct_no_trade_in_window": 0.109375,
+    "top5_share_of_value": 0.7409041291608479
+  },
+  "selloff": {
+    "period": "2026-09-30",
+    "probability": 0.5321692824363708,
+    "signal": "HIGH RISK",
+    "model": "xgboost"
+  },
+  "stress_default": {
+    "total_sell_kes": 1999999999.9999998,
+    "n_hit": 46,
+    "n_trapped": 16,
+    "n_no_market": 4,
+    "value_trapped_kes": 1300649917.5982113,
+    "weighted_impact": -0.03995076299157914,
+    "worst": [
+      {
+        "code": "PORT",
+        "price_impact": -0.25104375190050476,
+        "days_to_absorb": 354.3299818983405
+      },
+      {
+        "code": "CRWN",
+        "price_impact": -0.20508019898274826,
+        "days_to_absorb": 391.8842441147821
+      },
+      {
+        "code": "NBV",
+        "price_impact": -0.18390908369253842,
+        "days_to_absorb": 276.3137120033473
+      },
+      {
+        "code": "KUKZ",
+        "price_impact": -0.1741827870848198,
+        "days_to_absorb": 391.3069135202459
+      },
+      {
+        "code": "BRIT",
+        "price_impact": -0.15575179159116712,
+        "days_to_absorb": 143.05213831437663
+      }
+    ]
+  },
+  "crash": {
+    "top10_rate": 0.10852713178294573,
+    "base_rate": 0.05535364830863852,
+    "safest10_rate": 0.027131782945736434,
+    "rule_top10_rate": 0.0917312661498708,
+    "riskiest_now": [
+      "AMAC",
+      "CGEN",
+      "OCH",
+      "SKL",
+      "EVRD"
+    ]
+  },
+  "uses_rock_data": false,
+  "data_as_of": {
+    "stocks": "2026-11-16",
+    "flows": "2026-09-30",
+    "macro": "2026-11-30"
+  }
+}

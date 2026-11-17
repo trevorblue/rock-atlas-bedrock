@@ -1,0 +1,1 @@
+{"rows":44961,"stocks":64,"start":"2023-11-16","end":"2026-11-16","note":"Real NSE prices. 'open' is not published in the source, so Atlas's parser uses the close for it. Foreign turnover per stock is not available in public data."}

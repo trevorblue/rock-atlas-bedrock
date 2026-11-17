@@ -3,6 +3,32 @@
 
 **Research. Discover. Evaluate. Explain.**
 
+---
+
+> ### This repository is the merged build: ROCK ATLAS × Bedrock
+>
+> It joins the ROCK ATLAS platform with the **Bedrock** engine, which brings real Nairobi Securities Exchange data
+> (2013 to 16 November 2026) and six models tested out of sample. Nothing was removed from either project.
+>
+> * **Every ROCK ATLAS workspace is kept and now runs on real NSE prices**, with a Bedrock block added to each.
+> * **Bedrock's own pages are added**: Market Depth, Sell-off Alert, Crash Risk, Speculation Watch, Stress Test,
+>   Market-Ready and Guide.
+> * **The original MVP is preserved**: the eight workspaces on the synthetic corpus are cloned into the sidebar's
+>   **Demo** group, and `src/App.tsx` is kept untouched beside the merged shell in `src/AppMerged.tsx`.
+>
+> Read [MERGE_PLAN.md](MERGE_PLAN.md) for what was agreed before the work, and [MERGE_LOG.md](MERGE_LOG.md) for
+> what was actually done, including every conflict and how it was settled.
+>
+> ```bash
+> npm install
+> npm run dev                  # http://localhost:3000
+> python export_for_atlas.py   # optional: rebuild public/data from Bedrock's pipeline
+> ```
+>
+> The Bedrock engine itself lives in [bedrock/](bedrock/) (Python: pipeline, models, 16 tests, research note).
+
+---
+
 ROCK ATLAS is an AI-assisted financial intelligence platform designed to transform financial market data into transparent, explainable and actionable investment research.
 
 Built initially around the Kenyan capital market and Nairobi Securities Exchange (NSE), ROCK ATLAS integrates financial data science, quantitative research, predictive analytics, risk modelling and interactive decision-support systems.

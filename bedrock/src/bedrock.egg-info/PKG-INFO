@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: bedrock
+Version: 0.1.0
+Summary: Bedrock: NSE market depth, foreign sell-off early warning, speculation watch and stress test
+Requires-Python: >=3.10

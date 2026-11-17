@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bedrock"
+version = "0.1.0"
+description = "Bedrock: NSE market depth, foreign sell-off early warning, speculation watch and stress test"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]

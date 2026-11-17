@@ -1,0 +1,29 @@
+{
+  "crash_drop": -0.15,
+  "horizon_days": 21,
+  "n_test": 7154,
+  "n_samples": 9073,
+  "n_stocks": 67,
+  "first_test_year": 2016,
+  "base_rate": 0.05535364830863852,
+  "top10_rate": 0.10852713178294573,
+  "lift": 1.960613890846449,
+  "p_value_top10": 5.489629013022783e-09,
+  "safest10_rate": 0.027131782945736434,
+  "rule_top10_rate": 0.0917312661498708,
+  "auc_model": 0.5969767219397287,
+  "auc_rule": 0.6086833860953422,
+  "auc_gap_vs_rule": {
+    "gap": -0.0117066641556135,
+    "ci_low": -0.04533649008923906,
+    "ci_high": 0.01901244418596927
+  },
+  "riskiest_now": [
+    "AMAC",
+    "CGEN",
+    "OCH",
+    "SKL",
+    "EVRD"
+  ],
+  "as_of": "2026-11-16"
+}

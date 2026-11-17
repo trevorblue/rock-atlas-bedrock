@@ -1,0 +1,15 @@
+{
+  "period": "2026-09-30",
+  "probability": 0.5321692824363708,
+  "signal": "HIGH RISK",
+  "threshold_kes_m": -1807.5,
+  "base_rate": 0.2536231884057971,
+  "model": "xgboost",
+  "features_used": [
+    "flow",
+    "flow_3"
+  ],
+  "features_dropped": [],
+  "n_train": 138,
+  "freq": "ME"
+}
