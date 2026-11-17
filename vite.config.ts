@@ -6,6 +6,9 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // Vercel and any root domain serve from "/". GitHub Pages serves from
+    // /<repo>/, so set BASE_PATH=/rock-atlas-bedrock/ when building for Pages.
+    base: process.env.BASE_PATH || '/',
     plugins: [
       react(),
       tailwindcss(),
